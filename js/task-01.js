@@ -5,12 +5,12 @@
 Плюс, може бути однакові теги в інших списках з іншими айдішками.
 */
 const categoriesList = document.querySelector('#categories');
-const categoriesItems = categoriesList.querySelectorAll('.item');
 
-console.log(`Number of categories: ${categoriesItems.length}`);
-categoriesItems.forEach((category) => {
-    const categoryName = category.querySelector('h2').textContent;
-    const childOfCategory = category.querySelectorAll('li').length;
+console.log(`Number of categories: ${categoriesList.childElementCount}`);
 
+const categoriesItems = categoriesList.children;
+console.log(Array.from(categoriesItems).forEach((item) => {
+    const categoryName = item.firstElementChild.textContent;
+    const childOfCategory = item.lastElementChild.childElementCount;
     console.log(`Category: ${categoryName}\nElements: ${childOfCategory}`);
-});
+}));
