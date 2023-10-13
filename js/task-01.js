@@ -9,8 +9,8 @@ const categoriesList = document.querySelector('#categories');
 console.log(`Number of categories: ${categoriesList.childElementCount}`);
 
 const categoriesItems = categoriesList.children;
-console.log(Array.from(categoriesItems).forEach((item) => {
+Array.from(categoriesItems).forEach((item) => {
     const categoryName = item.firstElementChild.textContent;
     const childOfCategory = item.lastElementChild.childElementCount;
     console.log(`Category: ${categoryName}\nElements: ${childOfCategory}`);
-}));
+});
